@@ -1,4 +1,4 @@
-import React, {useMemo} from 'react';
+import {useMemo} from 'react';
 
 import { hasOwnProperty } from '../utils/objectPrototype';
 
@@ -17,13 +17,13 @@ const DataContainer = ({ rows, columns, rowsData }) => {
   const {TRComponent, TDComponent, ObjectValue} = useTable();
 
   return (
-    <div style={div}>
-      <table style={table}>
+    <div css={div}>
+      <table css={table}>
         <colgroup />
         <tbody>
           {rows.map((row, i) => (
-            <TRComponent key={row} style={tr} rowId={i}>
-              <TDComponent style={tdNone} rowId={i} columnId={columns.length}>{row}</TDComponent>
+            <TRComponent key={row} css={tr} rowId={i}>
+              <TDComponent css={tdNone} rowId={i} columnId={columns.length}>{row}</TDComponent>
 
               {columns.map((column, j) => {
                 const rowData = rowsData[i];
@@ -45,7 +45,7 @@ const DataContainer = ({ rows, columns, rowsData }) => {
                   return (
                     <TDComponent
                       key={column}
-                      style={tdSolid}
+                      css={tdSolid}
                       rowId={i}
                       columnId={j}
                     >
@@ -56,7 +56,7 @@ const DataContainer = ({ rows, columns, rowsData }) => {
                   return (
                     <TDComponent
                       key={column}
-                      style={tdSolid}
+                      css={tdSolid}
                       rowId={i}
                       columnId={j}
                     />

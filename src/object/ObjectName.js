@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import {propertyValueFormatter as defaultPropertyValueFormatter} from '../utils/propertyUtils';
@@ -21,7 +20,7 @@ const ObjectName = ({ name, dimmed = false, styles = {} , propertyValueFormatter
     ...styles,
   };
 
-  return <span style={appliedStyles}>{propertyValueFormatter(name, 'any')}</span>;
+  return <span css={appliedStyles}>{propertyValueFormatter(name, 'any')}</span>;
 };
 
 ObjectName.propTypes = {

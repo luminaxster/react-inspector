@@ -1,10 +1,10 @@
-import React, { Children, memo } from 'react';
+import { Children, memo } from 'react';
 import PropTypes from 'prop-types';
 import { useStyles } from '../styles';
 
 const Arrow = ({ expanded, styles }) => (
   <span
-    style={{
+     css={{
       ...styles.base,
       ...(expanded ? styles.expanded : styles.collapsed),
     }}>
@@ -38,20 +38,20 @@ const TreeNode = memo(props => {
     <li
       aria-expanded={expanded}
       role="treeitem"
-      style={styles.treeNodeBase}
+      css={styles.treeNodeBase}
       title={title}>
-      <div style={styles.treeNodePreviewContainer} onClick={onClick}>
+      <div css={styles.treeNodePreviewContainer} onClick={onClick}>
         {shouldShowArrow || Children.count(children) > 0 ? (
           <Arrow expanded={expanded} styles={styles.treeNodeArrow} />
         ) : (
           shouldShowPlaceholder && (
-            <span style={styles.treeNodePlaceholder}>&nbsp;</span>
+            <span css={styles.treeNodePlaceholder}>&nbsp;</span>
           )
         )}
         <NodeRenderer {...props} />
       </div>
 
-      <ol role="group" style={styles.treeNodeChildNodesContainer}>
+      <ol role="group" css={styles.treeNodeChildNodesContainer}>
         {expanded ? children : undefined}
       </ol>
     </li>

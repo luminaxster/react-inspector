@@ -1,4 +1,3 @@
-import React from 'react';
 import ObjectName from '../object/ObjectName';
 import ObjectPreview from './ObjectPreview';
 

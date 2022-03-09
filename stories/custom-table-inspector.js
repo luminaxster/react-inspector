@@ -1,5 +1,3 @@
-import React from 'react';
-
 import {storiesOf} from "@storybook/react";
 import {ResizableTableInspector} from '../src/';
 import {makeStories} from "./table-inspector-story-maker";

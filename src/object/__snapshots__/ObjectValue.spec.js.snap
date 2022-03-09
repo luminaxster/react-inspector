@@ -1,13 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`ObjectValue should render 1`] = `
-<span
-  style={
-    Object {
-      "color": "rgb(28, 0, 207)",
+Array [
+  <style
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": ".css-z7pcqj-ObjectValue{color:rgb(28, 0, 207);}",
+      }
     }
-  }
->
-  0
-</span>
+    data-emotion="css z7pcqj-ObjectValue"
+  />,
+  <span
+    className="css-z7pcqj-ObjectValue"
+  >
+    0
+  </span>,
+]
 `;

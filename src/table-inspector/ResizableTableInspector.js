@@ -1,4 +1,4 @@
-import React, {
+import {
    createContext,
    useContext,
    useRef,
@@ -50,14 +50,14 @@ const makeResizeHandle = (
    rowHandleStyle = defaultRowHandleStyle,
    columnHandleStyle = defaultColumnHandleStyle
 ) => (handle, ref) => {
-   const style =
+   const handleCss =
       handle === "e" || handle === "se" ?
          columnHandleStyle
          : handle === "s" ?
             rowHandleStyle : {};
    return (<div
       ref={ref}
-      style={style}
+      css={handleCss}
    />);
 };
 
@@ -82,7 +82,7 @@ const Cell = (
    {
       rowId,
       columnId,
-      style,
+      css,
       variant = "th",
       ...props
    }
@@ -107,24 +107,24 @@ const Cell = (
       [rowId, columnId, onCellSizeChange]
    );
    
-   const cellStyle = useMemo(() => ({
-         ...style,
+   const cellCss = useMemo(() => ({
+         ...css,
          position: "relative",
          boxSizing: "border-box",
          width,
          height,
       }),
-      [style, width, height]
+      [css, width, height]
    );
    
    const cell = isTH ?
       <th
          {...props}
-         style={cellStyle}
+         css={cellCss}
       />
       : <td
          {...props}
-         style={cellStyle}
+         css={cellCss}
       />;
    
    return (

@@ -1,4 +1,4 @@
-import React, {
+import {
    useContext,
    useCallback,
    useLayoutEffect,
@@ -100,7 +100,7 @@ const TreeView = memo(
 
     return (
       <ExpandedPathsContext.Provider value={stateAndSetter}>
-        <ol role="tree" style={styles.treeViewOutline}>
+        <ol role="tree" css={styles.treeViewOutline}>
           <ConnectedTreeNode
             name={name}
             data={data}

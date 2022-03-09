@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { createContext, useContext, useMemo } from 'react';
+import { createContext, useContext, useMemo } from 'react';
 
 import * as themes from './themes';
 import base from './base';

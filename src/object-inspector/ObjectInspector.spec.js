@@ -1,10 +1,9 @@
 /**
  * @jest-environment jsdom
  */
-
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
-import { render } from 'react-dom'
+import * as ReactDOMClient from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import ObjectInspector from './ObjectInspector';
 
@@ -44,7 +43,13 @@ describe('ObjectInspector Content', () => {
     ]);
     
     act(() => {
-      render(<ObjectInspector data={data} />, container);
+      const root = ReactDOMClient.createRoot?.(container);
+      if(root){ // React >= 18.
+        root.render(<ObjectInspector data={data} />);
+      }else{
+        ReactDOMClient.render(<ObjectInspector data={data} />, container);
+      }
+      
     });
     
     const button = container.querySelector('div');

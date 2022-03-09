@@ -1,4 +1,3 @@
-import React from 'react';
 import { useStyles } from '../styles';
 import TH from './TH';
 import {useTable} from "./Table";
@@ -17,13 +16,13 @@ const HeaderContainer = ({
   const {none, solid} = useStyles('TableInspectorLeftBorder');
   const {TRComponent} = useTable();
   return (
-    <div style={base}>
-      <table style={table}>
+    <div css={base}>
+      <table css={table}>
         <tbody>
           <TRComponent>
             <TH
                columnId={columns.length}
-              style={none}
+               css={none}
               sorted={sorted && sortIndexColumn}
               sortAscending={sortAscending}
               onClick={onIndexTHClick}>
@@ -32,7 +31,7 @@ const HeaderContainer = ({
             {columns.map((column, columnId )=> (
               <TH
                  columnId={columnId}
-                style={solid}
+                 css={solid}
                 key={column}
                 sorted={sorted && sortColumn === column}
                 sortAscending={sortAscending}

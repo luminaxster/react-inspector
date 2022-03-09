@@ -49,7 +49,7 @@ export function isIterable(x) {
 
 //https://github.com/inspect-js/is-object/blob/main/index.js
 export function isObject(x) {
-   return typeof x === 'object' && x !== null;
+   return x !== null && typeof x === 'object';
 }
 
 //https://github.com/grncdr/js-is-function/blob/master/index.js

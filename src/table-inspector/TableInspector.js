@@ -5,7 +5,7 @@
  */
 export { tableAcceptor, useTable } from './Table';
 
-import React, {useCallback, useState} from 'react';
+import {useCallback, useState} from 'react';
 import PropTypes from 'prop-types';
 
 import DataContainer from './DataContainer';
@@ -112,7 +112,7 @@ const TableInspector = ({
   }
 
   return (
-    <RootComponent style={styles.base}>
+    <RootComponent css={styles.base}>
       <HeaderContainer
         columns={colHeaders}
         /* for sorting */

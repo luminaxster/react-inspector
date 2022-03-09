@@ -9,13 +9,13 @@ describe('ObjectValue', () => {
   });
   
   it('should render bigint', () => {
-    const tree = TestRenderer.create(<ObjectValue object={9007199254740993n} />).toJSON();
+    const tree = TestRenderer.create(<ObjectValue object={9007199254740993n} />).toJSON()[1];
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['9007199254740993n']);
   });
 
   it('should render number', () => {
-    const tree = TestRenderer.create(<ObjectValue object={0} />).toJSON();
+    const tree = TestRenderer.create(<ObjectValue object={0} />).toJSON()[1];
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['0']);
   });
@@ -23,13 +23,13 @@ describe('ObjectValue', () => {
   it('should render string with quotes', () => {
     const tree = TestRenderer.create(
       <ObjectValue object={'octocat'} />
-    ).toJSON();
+    ).toJSON()[1];
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['"octocat"']);
   });
 
   it('should render boolean', () => {
-    const tree = TestRenderer.create(<ObjectValue object={true} />).toJSON();
+    const tree = TestRenderer.create(<ObjectValue object={true} />).toJSON()[1];
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['true']);
   });
@@ -37,13 +37,13 @@ describe('ObjectValue', () => {
   it('should render undefined', () => {
     const tree = TestRenderer.create(
       <ObjectValue object={undefined} />
-    ).toJSON();
+    ).toJSON()[1];
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['undefined']);
   });
 
   it('should render null', () => {
-    const tree = TestRenderer.create(<ObjectValue object={null} />).toJSON();
+    const tree = TestRenderer.create(<ObjectValue object={null} />).toJSON()[1];
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['null']);
   });
@@ -115,7 +115,7 @@ describe('ObjectValue', () => {
   it('should render a symbol', () => {
     const tree = TestRenderer.create(
       <ObjectValue object={Symbol()} />
-    ).toJSON();
+    ).toJSON()[1];
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['Symbol()']);
   });
@@ -123,7 +123,7 @@ describe('ObjectValue', () => {
   it('should render a symbol foo', () => {
     const tree = TestRenderer.create(
       <ObjectValue object={Symbol('foo')} />
-    ).toJSON();
+    ).toJSON()[1];
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['Symbol(foo)']);
   });
@@ -134,6 +134,6 @@ describe('ObjectValue', () => {
     const tree = TestRenderer.create(
       <ObjectValue styles={style} object={''} />
     ).toJSON();
-    expect(tree.props.style.color).toEqual('blue');
+    expect(tree[0].props.dangerouslySetInnerHTML.__html).toContain("{color:blue;}");
   });
 });

@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import {propertyValueFormatter as defaultPropertyValueFormatter} from '../utils/propertyUtils';
@@ -16,27 +15,27 @@ const ObjectValue = ({ object, styles , propertyValueFormatter = defaultProperty
 
   switch (typeof object) {
     case 'bigint':
-      return <span style={mkStyle('objectValueNumber')}>{propertyValueFormatter(object, 'bigint')}</span>;
+      return <span css={mkStyle('objectValueNumber')}>{propertyValueFormatter(object, 'bigint')}</span>;
     case 'number':
-      return <span style={mkStyle('objectValueNumber')}>{propertyValueFormatter(object, 'number')}</span>;
+      return <span css={mkStyle('objectValueNumber')}>{propertyValueFormatter(object, 'number')}</span>;
     case 'string':
-      return <span style={mkStyle('objectValueString')}>{propertyValueFormatter(object, 'string')}</span>;
+      return <span css={mkStyle('objectValueString')}>{propertyValueFormatter(object, 'string')}</span>;
     case 'boolean':
       return (
-        <span style={mkStyle('objectValueBoolean')}>{propertyValueFormatter(object, 'boolean')}</span>
+        <span css={mkStyle('objectValueBoolean')}>{propertyValueFormatter(object, 'boolean')}</span>
       );
     case 'undefined':
-      return <span style={mkStyle('objectValueUndefined')}>{propertyValueFormatter(undefined, 'undefined')}</span>;
+      return <span css={mkStyle('objectValueUndefined')}>{propertyValueFormatter(undefined, 'undefined')}</span>;
     case 'object':
       if (object === null) {
-        return <span style={mkStyle('objectValueNull')}>{propertyValueFormatter(null, 'null')}</span>;
+        return <span css={mkStyle('objectValueNull')}>{propertyValueFormatter(null, 'null')}</span>;
       }
       if (object instanceof Date) {
         return <span>{propertyValueFormatter(object, 'Date')}</span>;
       }
       if (object instanceof RegExp) {
         return (
-          <span style={mkStyle('objectValueRegExp')}>{propertyValueFormatter(object, 'RegExp')}</span>
+          <span css={mkStyle('objectValueRegExp')}>{propertyValueFormatter(object, 'RegExp')}</span>
         );
       }
       if (Array.isArray(object)) {
@@ -56,15 +55,15 @@ const ObjectValue = ({ object, styles , propertyValueFormatter = defaultProperty
     case 'function':
       return (
         <span>
-          <span style={mkStyle('objectValueFunctionPrefix')}>ƒ&nbsp;</span>
-          <span style={mkStyle('objectValueFunctionName')}>
+          <span css={mkStyle('objectValueFunctionPrefix')}>ƒ&nbsp;</span>
+          <span css={mkStyle('objectValueFunctionName')}>
             {propertyValueFormatter(object, 'function')}
           </span>
         </span>
       );
     case 'symbol':
       return (
-        <span style={mkStyle('objectValueSymbol')}>{propertyValueFormatter(object, 'symbol')}</span>
+        <span css={mkStyle('objectValueSymbol')}>{propertyValueFormatter(object, 'symbol')}</span>
       );
     default:
       return <span >{propertyValueFormatter(object, 'unknown')}</span>;

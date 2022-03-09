@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 
 import { useStyles } from '../styles';
@@ -6,9 +5,9 @@ import shouldInline from './shouldInline';
 
 const OpenTag = ({ tagName, attributes, styles }) => {
   return (
-    <span style={styles.base}>
+    <span css={styles.base}>
       {'<'}
-      <span style={styles.tagName}>{tagName}</span>
+      <span css={styles.tagName}>{tagName}</span>
 
       {(() => {
         if (attributes) {
@@ -18,9 +17,9 @@ const OpenTag = ({ tagName, attributes, styles }) => {
             attributeNodes.push(
               <span key={i}>
                 {' '}
-                <span style={styles.htmlAttributeName}>{attribute.name}</span>
+                <span css={styles.htmlAttributeName}>{attribute.name}</span>
                 {'="'}
-                <span style={styles.htmlAttributeValue}>{attribute.value}</span>
+                <span css={styles.htmlAttributeValue}>{attribute.value}</span>
                 {'"'}
               </span>
             );
@@ -37,9 +36,9 @@ const OpenTag = ({ tagName, attributes, styles }) => {
 // isChildNode style={{ marginLeft: -12 /* hack: offset placeholder */ }}
 const CloseTag = ({ tagName, isChildNode = false, styles }) => (
   <span
-    style={Object.assign({}, styles.base, isChildNode && styles.offsetLeft)}>
+    css={Object.assign({}, styles.base, isChildNode && styles.offsetLeft)}>
     {'</'}
-    <span style={styles.tagName}>{tagName}</span>
+    <span css={styles.tagName}>{tagName}</span>
     {'>'}
   </span>
 );
@@ -90,7 +89,7 @@ const DOMNodePreview = ({ isCloseTag, data, expanded }) => {
       return <span>{'<![CDATA[' + data.textContent + ']]>'}</span>;
     case Node.COMMENT_NODE:
       return (
-        <span style={styles.htmlComment}>
+        <span css={styles.htmlComment}>
           {'<!--'}
           {data.textContent}
           {'-->'}
@@ -100,7 +99,7 @@ const DOMNodePreview = ({ isCloseTag, data, expanded }) => {
       return <span>{data.nodeName}</span>;
     case Node.DOCUMENT_TYPE_NODE:
       return (
-        <span style={styles.htmlDoctype}>
+        <span css={styles.htmlDoctype}>
           {'<!DOCTYPE '}
           {data.name}
           {data.publicId ? ` PUBLIC "${data.publicId}"` : ''}
