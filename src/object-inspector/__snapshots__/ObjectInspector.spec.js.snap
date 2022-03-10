@@ -3,17 +3,39 @@
 exports[`ObjectInspector Content should render with Maps with Regex and Maps keys 1`] = `"<ol role=\\"tree\\" class=\\"css-1mbgsgl\\"><li aria-expanded=\\"true\\" role=\\"treeitem\\" class=\\"css-9vhyes\\"><div class=\\"css-0\\"><span class=\\"css-18ss45a-Arrow\\">▶</span><span class=\\"css-gkg3jw-ObjectPreview\\">Map </span><span class=\\"css-gkg3jw-ObjectPreview\\">{}</span></div><ol role=\\"group\\" class=\\"css-18j2x0a\\"><li aria-expanded=\\"false\\" role=\\"treeitem\\" class=\\"css-9vhyes\\"><div class=\\"css-0\\"><span class=\\"css-26z203\\">&nbsp;</span><span><span class=\\"css-1n87jha-ObjectValue\\">/\\\\S/g</span><span>: </span><span class=\\"css-1n87jha-ObjectValue\\">\\"Regular Expression key\\"</span></span></div><ol role=\\"group\\" class=\\"css-18j2x0a\\"></ol></li></ol></li></ol>"`;
 
 exports[`ObjectInspector passes \`nodeRenderer\` prop to <TreeView/> 1`] = `
+.emotion-0 {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.emotion-1 {
+  color: black;
+  background-color: white;
+  line-height: 1.2;
+  cursor: default;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: Menlo,monospace;
+  font-size: 11px;
+}
+
+.emotion-3 {
+  margin: 0;
+  padding-left: 12px;
+}
+
 <ol
-  className="css-1mbgsgl"
+  className="emotion-0"
   role="tree"
 >
   <li
     aria-expanded={false}
-    className="css-9vhyes"
+    className="emotion-1"
     role="treeitem"
   >
     <div
-      className="css-0"
+      className="emotion-2"
       onClick={[Function]}
     >
       <span>
@@ -21,7 +43,7 @@ exports[`ObjectInspector passes \`nodeRenderer\` prop to <TreeView/> 1`] = `
       </span>
     </div>
     <ol
-      className="css-18j2x0a"
+      className="emotion-3"
       role="group"
     />
   </li>
@@ -29,27 +51,53 @@ exports[`ObjectInspector passes \`nodeRenderer\` prop to <TreeView/> 1`] = `
 `;
 
 exports[`ObjectInspector should render 1`] = `
+.emotion-0 {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.emotion-1 {
+  color: black;
+  background-color: white;
+  line-height: 1.2;
+  cursor: default;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: Menlo,monospace;
+  font-size: 11px;
+}
+
+.emotion-3 {
+  color: rgb(128, 128, 128);
+}
+
+.emotion-4 {
+  margin: 0;
+  padding-left: 12px;
+}
+
 <ol
-  className="css-1mbgsgl"
+  className="emotion-0"
   role="tree"
 >
   <li
     aria-expanded={false}
-    className="css-9vhyes"
+    className="emotion-1"
     role="treeitem"
   >
     <div
-      className="css-0"
+      className="emotion-2"
       onClick={[Function]}
     >
       <span
-        className="css-utwc52-ObjectValue"
+        className="emotion-3"
       >
         undefined
       </span>
     </div>
     <ol
-      className="css-18j2x0a"
+      className="emotion-4"
       role="group"
     />
   </li>

@@ -21,10 +21,10 @@ describe('ObjectName', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('Accepts and applies additional `style` prop', () => {
-    // Test that a custom `style` props is passed and applied to <span/>
-    const style = { color: 'hotpink' };
-    const tree = TestRenderer.create(<ObjectName styles={style} />);
+  it('Accepts and applies additional `styles` prop', () => {
+    // Test that a custom `styles` props is passed and applied to <span/>
+    const styles = { color: 'hotpink' };
+    const tree = TestRenderer.create(<ObjectName styles={styles} />);
 
     expect(tree).toMatchSnapshot();
   });

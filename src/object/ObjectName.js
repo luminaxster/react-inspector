@@ -28,6 +28,8 @@ ObjectName.propTypes = {
   name: PropTypes.string,
   /** Should property name be dimmed */
   dimmed: PropTypes.bool,
+  /** Styles object to be merged with base style */
+  styles: PropTypes.object,
   /** Function to format the content. It receives the current object to be rendered and its type, it must return valid react children. */
   propertyValueFormatter: PropTypes.func,
 };

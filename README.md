@@ -169,7 +169,7 @@ Type of inspectors:
   - [x] common objects
   - [x] DOM nodes
 - [x] Table style
-  - [ ] Column resizer
+  - [x] Column resizer
 - [ ] Group style
 
 ## Contribution
@@ -180,4 +180,4 @@ Contribution is welcome. [Past contributors](https://github.com/storybookjs/reac
 
 - If you intend to capture `console.log`s, you may want to look at [`console-feed`](https://www.npmjs.com/package/console-feed).
 - `react-object-inspector` package will be deprecated. `<ObjectInspector/>` is now part of the new package `react-inspector`.
-- Why inline style? [This document](https://github.com/erikras/react-redux-universal-hot-example/blob/master/docs/InlineStyles.md) summarizes it well.
+- Why Emotion CSS and not inline style? Emotion CSS overcomes the limitations explained in [this document](https://github.com/erikras/react-redux-universal-hot-example/blob/master/docs/InlineStyles.md) summarizes it well.

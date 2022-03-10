@@ -9,13 +9,13 @@ describe('ObjectValue', () => {
   });
   
   it('should render bigint', () => {
-    const tree = TestRenderer.create(<ObjectValue object={9007199254740993n} />).toJSON()[1];
+    const tree = TestRenderer.create(<ObjectValue object={9007199254740993n} />).toJSON();
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['9007199254740993n']);
   });
 
   it('should render number', () => {
-    const tree = TestRenderer.create(<ObjectValue object={0} />).toJSON()[1];
+    const tree = TestRenderer.create(<ObjectValue object={0} />).toJSON();
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['0']);
   });
@@ -23,13 +23,13 @@ describe('ObjectValue', () => {
   it('should render string with quotes', () => {
     const tree = TestRenderer.create(
       <ObjectValue object={'octocat'} />
-    ).toJSON()[1];
+    ).toJSON();
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['"octocat"']);
   });
 
   it('should render boolean', () => {
-    const tree = TestRenderer.create(<ObjectValue object={true} />).toJSON()[1];
+    const tree = TestRenderer.create(<ObjectValue object={true} />).toJSON();
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['true']);
   });
@@ -37,13 +37,13 @@ describe('ObjectValue', () => {
   it('should render undefined', () => {
     const tree = TestRenderer.create(
       <ObjectValue object={undefined} />
-    ).toJSON()[1];
+    ).toJSON();
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['undefined']);
   });
 
   it('should render null', () => {
-    const tree = TestRenderer.create(<ObjectValue object={null} />).toJSON()[1];
+    const tree = TestRenderer.create(<ObjectValue object={null} />).toJSON();
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['null']);
   });
@@ -95,8 +95,8 @@ describe('ObjectValue', () => {
     // console.log(JSON.stringify(n, null, 2))
     // console.log(typeof n)
     // console.log(tree.children[1].props.children)
-    expect(tree.children[0]).toEqual(<span style={objectStyles.value.function.keyword}>function</span>)
-    expect(tree.children[1]).toEqual(<span style={objectStyles.value.function.name}>{[ '\xa0', 'object', '()' ]}</span>)
+    expect(tree.children[0]).toEqual(<span css={objectStyles.value.function.keyword}>function</span>)
+    expect(tree.children[1]).toEqual(<span css={objectStyles.value.function.name}>{[ '\xa0', 'object', '()' ]}</span>)
   });
   */
 
@@ -106,16 +106,16 @@ describe('ObjectValue', () => {
     const tree = renderer.getRenderOutput()
     expect(tree.type).toBe('span')
     expect(tree.children).toEqual([
-                                          <span style={objectStyles.value.function.keyword}>function</span>,
-                                          <span style={objectStyles.value.function.name}>{[ '\xa0', 'id', '()' ]}</span>
-                                        ])
+      <span css={objectStyles.value.function.keyword}>function</span>,
+      <span css={objectStyles.value.function.name}>{[ '\xa0', 'id', '()' ]}</span>
+    ])
   });
   */
 
   it('should render a symbol', () => {
     const tree = TestRenderer.create(
       <ObjectValue object={Symbol()} />
-    ).toJSON()[1];
+    ).toJSON();
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['Symbol()']);
   });
@@ -123,17 +123,17 @@ describe('ObjectValue', () => {
   it('should render a symbol foo', () => {
     const tree = TestRenderer.create(
       <ObjectValue object={Symbol('foo')} />
-    ).toJSON()[1];
+    ).toJSON();
     expect(tree.type).toBe('span');
     expect(tree.children).toEqual(['Symbol(foo)']);
   });
 
   it('accepts and applies style from `styles` prop', () => {
     // Custom `styles` prop gets applied to the element
-    const style = { color: 'blue' };
+    const styles = { color: 'blue' };
     const tree = TestRenderer.create(
-      <ObjectValue styles={style} object={''} />
+      <ObjectValue styles={styles} object={''} />
     ).toJSON();
-    expect(tree[0].props.dangerouslySetInnerHTML.__html).toContain("{color:blue;}");
+    expect(tree).toMatchSnapshot();
   });
 });

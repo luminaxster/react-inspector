@@ -4,19 +4,29 @@
       "@babel/preset-env",
       {
         "targets": {
-          "browsers": ["ie >= 11"]
+          "browsers": [
+            "ie >= 11"
+          ]
         },
         "loose": false
       }
     ],
     [
       "@babel/preset-react",
-      { "runtime": "automatic", "importSource": "@emotion/react" }
+      {
+        "runtime": "automatic",
+        "importSource": "@emotion/react"
+      }
     ]
   ],
   "plugins": [
     "@babel/plugin-syntax-bigint",
-    ["@babel/plugin-proposal-class-properties", { "loose": false }],
+    [
+      "@babel/plugin-proposal-class-properties",
+      {
+        "loose": false
+      }
+    ],
     "@babel/plugin-proposal-do-expressions",
     "@babel/plugin-proposal-export-default-from",
     "@babel/plugin-proposal-logical-assignment-operators",
@@ -28,7 +38,10 @@
   ],
   "env": {
     "test": {
-      "plugins": ["@babel/plugin-transform-runtime", "@emotion/babel-plugin"]
+      "plugins": [
+        "@babel/plugin-transform-runtime",
+        "@emotion/babel-plugin"
+      ]
     }
   }
 }
