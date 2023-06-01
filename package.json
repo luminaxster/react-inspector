@@ -1,7 +1,7 @@
 {
-  "name": "react-inspector",
-  "version": "5.1.2",
-  "description": "Power of Browser DevTools inspectors right inside your React app",
+  "name": "react-inspector-plus",
+  "version": "6.0.0",
+  "description": "Power of Browser DevTools inspectors right inside your React app (as used within seeCode.run: searchable inspectors, resizable table columns, and more)",
   "keywords": [
     "devtools",
     "inspector",
@@ -20,16 +20,16 @@
     "ui",
     "view"
   ],
-  "homepage": "https://github.com/xyc/react-inspector",
+  "homepage": "https://github.com/luminaxster/react-inspector",
   "bugs": {
-    "url": "https://github.com/xyc/react-inspector/issues"
+    "url": "https://github.com/luminaxster/react-inspector/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/xyc/react-inspector.git"
+    "url": "https://github.com/luminaxster/react-inspector.git"
   },
   "license": "MIT",
-  "author": "Xiaoyi Chen <cxychina@gmail.com> (http://github.com/xyc)",
+  "author": "David Samudio <luminaxster@gmail.com>",
   "main": "dist/cjs/react-inspector.js",
   "module": "dist/es/react-inspector.js",
   "files": [

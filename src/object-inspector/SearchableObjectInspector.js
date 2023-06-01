@@ -6,10 +6,10 @@ import {
    ObjectName as InspectorObjectName,
    ObjectValue as InspectorObjectValue,
    useStyles,
-} from '../src';
-import {hasOwnProperty} from '../src/utils/objectPrototype';
-import {getPropertyValue} from "../src/utils/propertyUtils";
-import {getExpandedPaths} from '../src/tree-view/pathUtils';
+} from '../index';
+import {hasOwnProperty} from '../utils/objectPrototype';
+import {getPropertyValue} from "../utils/propertyUtils";
+import {getExpandedPaths} from '../tree-view/pathUtils';
 
 export const SearchContext = createContext(['', () => {}]);
 const withSearchContext = Component => {

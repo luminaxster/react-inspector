@@ -11,7 +11,7 @@ import {
    SearchContext,
    searchableNodeRenderer,
    getSearchableExpandedPaths
-} from "./SearchableObjectInspector";
+} from "../src/object-inspector/SearchableObjectInspector";
 import {propertyValueFormatter} from '../src/utils/propertyUtils';
 
 const makeObjects = () => {

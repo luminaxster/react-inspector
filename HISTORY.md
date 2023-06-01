@@ -1,3 +1,13 @@
+## 6.0.0 (02/22/2022)
+- **Breaking changes:** `@emotion/react` and `react-resizable` are required peer dependencies.
+- Uses `emotion` for CSS handling.
+- Fixes `isNode` error in Next.js.
+- Adds resizable table columns.
+- New Searchable Object Inspector allows searching for values within objects.
+- Most API is now exposed, including useStyles.
+- Now the expandedPaths state can be controlled.
+- `ObjectName` and `ObjectValue` support a custom `propertyValueFormatter`.
+
 ## 5.1.1 (04/02/2021)
 - Include support for React 17 in peerDependencies. [120](https://github.com/storybookjs/react-inspector/pull/120) [124](https://github.com/storybookjs/react-inspector/pull/124)
 - Only publish required files. [119](https://github.com/storybookjs/react-inspector/pull/119)
