@@ -1,6 +1,6 @@
 {
   "name": "react-inspector-plus",
-  "version": "6.0.0",
+  "version": "6.0.1",
   "description": "Power of Browser DevTools inspectors right inside your React app (as used within seeCode.run: searchable inspectors, resizable table columns, and more)",
   "keywords": [
     "devtools",
